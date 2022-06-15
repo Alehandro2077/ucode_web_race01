@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+html {
+    background-image: url(reg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.search_game {
+    width: 500px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+.search_in {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    z-index: 1;
+    background: #140c0c;
+    max-width: 500px;
+    margin: 0 auto 100px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.search_in p {
+    
+    color: white;
+    font-size: 30px;
+}
+
+
+body {
+    /* fallback for old browsers */
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.game_name {
+    font-family: "Roboto", sans-serif;
+    font-size: 60px;
+    text-align: center;
+
+}
+
+.game_name p {
+    color: rgb(0, 0, 0);
+}

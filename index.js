@@ -1,33 +1,16 @@
-import express from "express";
-import mongoose from "mongoose";
-import fileUpload from "express-fileupload";
-
-import Post from "./Post.js";
-import router from "./router.js";
-
-const PORT = 6060;
-const DB_URL =
-  "mongodb+srv://aboba228:ZXC_Igor@cluster0.xerdfq7.mongodb.net/?retryWrites=true&w=majority";
+const express = require('express');
+const fileUpload = require('express-fileupload');
+const session = require('express-session');
+const router = require('./router');
 
 const app = express();
-app.use(express.json());
-app.use(express.static("static"));
-app.use(fileUpload({}));
-app.use("/api", router);
+const PORT = 6060;
 
-async function startApp() {
-  try {
-    await mongoose.connect(
-      DB_URL,
-      { useUnifiedTopology: true },
-      { useNewUrlParser: true }
-    );
-    app.listen(PORT, () => {
-      console.log(`listening on port ${PORT}`);
-    });
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-startApp();
+app.listen(PORT);
+app.set('view engine', 'ejs');
+// console.log(`Server listening on port ${PORT}`);
+app.use(fileUpload({createParentPath: true}))
+app.use(session({secret: 'aboba', resave: false, saveUninitialized: false}));
+app.use(express.static('public'));
+app.use(express.urlencoded({extended: true}));
+app.use('/', router);

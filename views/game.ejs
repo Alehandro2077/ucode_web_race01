@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    <div>
+        <% var avatar1 = 'default.jpg'; %>
+        <% var avatar2 = 'default.jpg'; %>
+        <% if(has_avatar1) { %>
+            <% var avatar1 = `/user_avatars/${login1}.jpg`; %>
+        <% } %>
+        <% if(has_avatar2) { %>
+            <% var avatar2 = `/user_avatars/${login2}.jpg`; %>
+        <% } %>
+        <img width="200" height="200" style="display: block;margin:0 auto;" src="<%= avatar1 %>" alt="<%= login1 %>.jpg">
+        <p style="text-align: center;font-size: large;"><%= login1 %></p>
+        <p style="text-align: center;font-size: large;">VS</p>
+        <p style="text-align: center;font-size: large;"><%= login2 %></p>
+        <img width="200" height="200" style="display: block;margin:0 auto;" src="<%= avatar2 %>" alt="<%= login2 %>.jpg">
+
+    </div>
+</body>
+</html>

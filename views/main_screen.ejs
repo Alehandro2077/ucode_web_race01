@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/main_screen.css">
+</head>
+
+<body>
+    <div class="game_name">
+        <p>ERROR 1000-7</p>
+    </div>
+    <div>
+        <% var avatar = 'default.jpg'; %>
+        <% if(has_avatar) { %>
+            <% var avatar = `/user_avatars/${login}.jpg`; %>
+        <% } %>
+        <img width="200" height="200" style="display: block;margin:0 auto;" src="<%= avatar %>" alt="<%= login %>.jpg">
+        <p style="text-align: center;color: white;font-size: large;"><%= login %></p>
+    </div>
+    <div class="main-page">
+        <div class="form">
+            <form class="upload" action="/main_screen" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/png, image/jpeg" placeholder="upload avatar" />
+                <button type="submit">Upload</button>
+            </form>
+            <a href="/search_game"><button>game</button></a>
+            <a href="/exit"><button>exit</button></a>
+        </div>
+
+    </div>
+    <script src="/main_screen.js"></script>
+</body>
+
+</html>
